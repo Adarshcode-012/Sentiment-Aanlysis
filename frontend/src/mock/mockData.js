@@ -1,0 +1,61 @@
+export const mockData = {
+    stats: {
+        totalDataPoints: 45230,
+        positiveSentiment: 62.5,
+        negativeSentiment: 17.2,
+        activeTopics: 24,
+    },
+    sentimentDistribution: [
+        { label: 'Positive', value: 62, color: '#10B981' },
+        { label: 'Neutral', value: 21, color: '#6B7280' },
+        { label: 'Negative', value: 17, color: '#EF4444' },
+    ],
+    sentimentTrend: [
+        { date: '2024-01-01', score: 65 },
+        { date: '2024-01-02', score: 68 },
+        { date: '2024-01-03', score: 62 },
+        { date: '2024-01-04', score: 70 },
+        { date: '2024-01-05', score: 75 },
+        { date: '2024-01-06', score: 72 },
+        { date: '2024-01-07', score: 78 },
+        { date: '2024-01-08', score: 80 },
+        { date: '2024-01-09', score: 75 },
+        { date: '2024-01-10', score: 82 },
+        { date: '2024-01-11', score: 85 },
+        { date: '2024-01-12', score: 79 },
+        { date: '2024-01-13', score: 88 },
+        { date: '2024-01-14', score: 92 },
+    ],
+    sectorSentiment: [
+        { sector: 'Technology', score: 85, vol: 12 },
+        { sector: 'Finance', score: 45, vol: 24 },
+        { sector: 'Healthcare', score: 65, vol: 8 },
+        { sector: 'Consumer', score: 72, vol: 15 },
+        { sector: 'Energy', score: 30, vol: 35 },
+    ],
+    liveSignals: [
+        { id: 1, type: 'surge', sector: 'Tech', msg: 'Sudden surge in "Private AI" mentions', intensity: 'high', time: 'Just now' },
+        { id: 2, type: 'dip', sector: 'Finance', msg: 'Sentiment dip following regulatory news', intensity: 'medium', time: '4m ago' },
+        { id: 3, type: 'neutral', sector: 'Health', msg: 'Stable sentiment for biotech startups', intensity: 'low', time: '12m ago' },
+        { id: 4, type: 'surge', sector: 'Energy', msg: 'Renewable energy interest peaking', intensity: 'medium', time: '18m ago' },
+    ],
+    topics: [
+        { name: 'AI Regulation', frequency: 120, trend: 'up' },
+        { name: 'Generative AI', frequency: 95, trend: 'up' },
+        { name: 'Market Volatility', frequency: 80, trend: 'down' },
+        { name: 'Consumer Spending', frequency: 65, trend: 'stable' },
+        { name: 'Supply Chain', frequency: 50, trend: 'up' },
+    ],
+    alerts: [
+        { id: 1, type: 'warning', message: 'Significant drop in sentiment for tech sector detected.', time: '2h ago' },
+        { id: 2, type: 'info', message: 'New trending topic: #SustainableAI', time: '5h ago' },
+        { id: 3, type: 'success', message: 'Data ingestion complete for Q1 2024 reports.', time: '1d ago' },
+    ],
+    productSentiment: [
+        { product: 'Product A', positive: 75, negative: 10 },
+        { product: 'Product B', positive: 60, negative: 20 },
+        { product: 'Product C', positive: 45, negative: 35 },
+        { product: 'Product D', positive: 85, negative: 5 },
+    ],
+    ragResponse: "Based on the recent market trends and consumer sentiment analysis, the general outlook for the AI sector remains highly positive. There is a strong interest in generative AI applications, although concerns regarding data privacy and ethical implications are gaining traction in regulatory discussions. Consumer spending is shifting towards productivity-enhancing tools, which could benefit SaaS platforms integrating AI capabilities in the coming months."
+};

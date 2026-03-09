@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #111827;
+  --color-accent-primary: #6366f1;
+  --color-accent-secondary: #22d3ee;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-border-dark: #1e293b;
+
+  --color-sentiment-positive: #22c55e;
+  --color-sentiment-negative: #ef4444;
+  --color-sentiment-neutral: #f59e0b;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.auth-gradient {
+  background: linear-gradient(135deg, var(--color-accent-primary) 0%, #312EDB 100%);
+}
+
+.hover-scale {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+.card {
+  @apply bg-bg-secondary rounded-xl shadow-sm border border-border-dark p-6;
+}
+
+.input-focus {
+  @apply focus:ring-2 focus:ring-accent-primary/20 focus:border-accent-primary outline-none transition-all;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Sliding Auth Animation classes */
+.auth-container {
+  @apply relative overflow-hidden w-full max-w-4xl min-h-[600px] bg-white rounded-3xl shadow-2xl;
+}
+
+.form-container {
+  @apply absolute top-0 h-full transition-all duration-700 ease-in-out;
+}
+
+.sign-in-container {
+  @apply left-0 w-1/2 z-[2];
+}
+
+.auth-container.right-panel-active .sign-in-container {
+  @apply translate-x-full;
+}
+
+.sign-up-container {
+  @apply left-0 w-1/2 opacity-0 z-[1];
+}
+
+.auth-container.right-panel-active .sign-up-container {
+  @apply translate-x-full opacity-100 z-[5] animate-[show_0.7s];
+}
+
+@keyframes show {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  @apply absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-all duration-700 ease-in-out z-[100];
+}
+
+.auth-container.right-panel-active .overlay-container {
+  @apply -translate-x-full;
+}
+
+.overlay {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  @apply text-white relative -left-full h-full w-[200%] translate-x-0 transition-all duration-700 ease-in-out;
+}
+
+.auth-container.right-panel-active .overlay {
+  @apply translate-x-1/2;
+}
+
+.overlay-panel {
+  @apply absolute flex flex-col items-center justify-center p-12 text-center top-0 h-full w-1/2 translate-x-0 transition-all duration-700 ease-in-out;
+}
+
+.overlay-left {
+  @apply -translate-x-[20%];
+}
+
+.auth-container.right-panel-active .overlay-left {
+  @apply translate-x-0;
+}
+
+.overlay-right {
+  @apply right-0 translate-x-0;
+}
+
+.auth-container.right-panel-active .overlay-right {
+  @apply translate-x-[20%];
+}
